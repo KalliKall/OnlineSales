@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   		});*/
 
   		this.service.getSellerById(1337).subscribe((result) => {
-  			this.seller.result;
+  			this.seller = result;
   		}, (err) => {
   			console.log("you fuckd up");
   		})
