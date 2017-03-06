@@ -2,9 +2,15 @@
   {{title}}
 </h1>
 
-<ngb-alert type="info">
-	 Nú er gaman!
-</ngb-alert>
+<router-outlet></router-outlet>
+<!--
+<div *ngFor="let p of products">
+	<app-product-card 
+	[product]="p"
+	(productUpdated)="onProductEdited($event)">
+
+	</app-product-card>
+</div>
 
 <button class="btn-primary" (click)="addSeller()">Bæta við seljanda</button>
 
@@ -15,6 +21,7 @@
 	{{s.name}}
 	</li>
 </ul>
+
 
 <div *ngIf="seller">
 	<h2>{{seller.name}}</h2>
@@ -30,3 +37,4 @@
 	</div>
 
 </div>
+-->

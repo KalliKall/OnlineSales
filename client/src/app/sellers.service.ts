@@ -10,6 +10,15 @@ export interface Seller {
 	imagePath: string;
 }
 
+export interface SellerProduct {
+	id: number;
+	name: string;
+	price: number;
+	quantitySold: number;
+	quantityInStock: number;
+	imagePath: string;
+}
+
 @Injectable()
 export class SellersService {
 
@@ -28,5 +37,12 @@ export class SellersService {
   	.map(response =>{
   		return <Seller> response.json();
   	});
+  }
+
+  getSellerProducts(id: number): Observable<SellerProduct[]> {
+	  return this.http.get('http://localhost:5000/api/sellers/' + id + '/products')
+	  	.map(response => {
+			return <SellerProduct[]> response.json();
+		  });
   }
 }

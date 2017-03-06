@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { SellersService, Seller } from './sellers.service';
+import { SellersService, Seller, SellerProduct } from './sellers.service';
 import { SellerDlgComponent } from './seller-dlg/seller-dlg.component';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -15,18 +15,30 @@ export class AppComponent implements OnInit {
   //private seller: Seller[];
   private seller: Seller;
 
+  products: SellerProduct[];
+
   constructor(private service: SellersService, private modalService: NgbModal) { }
   
   ngOnInit() {
   		/*this.service.getSellers().subscribe(result => {
   			this.sellers = result;
-  		});*/
+  		});
 
   		this.service.getSellerById(1337).subscribe((result) => {
   			this.seller = result;
   		}, (err) => {
   			console.log("you fuckd up");
   		})
+
+      this.service.getSellerProducts(1).subscribe(result => {
+        this.products = result;
+      });*/
+
+  }
+
+  onProductEdited(p: SellerProduct) {
+    // TODO: upfæra vöruna í gegnum service klasann
+    console.log(p);
   }
 
   addSeller() {

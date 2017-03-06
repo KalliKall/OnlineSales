@@ -1,0 +1,15 @@
+<p>
+  Söluaðilar
+</p>
+
+<h3>Nafn ---- Flokkur</h3>
+
+<ul>
+	<li *ngFor="let s of sellers">
+    <a [routerLink]="['/seller', s.id]"> {{s.name}} --- {{s.category}} </a>
+	</li>
+</ul>
+
+<button class="btn-primary" (click)="addSeller()">Bæta við seljanda</button>
+
+<template ngbModalContainer></template>
