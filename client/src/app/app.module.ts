@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { SellerDlgComponent } from './seller-dlg/seller-dlg.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ListSellersComponent } from './list-sellers/list-sellers.component';
+import { SellerDetailsComponent } from './seller-details/seller-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SellerDlgComponent,
     ProductCardComponent,
-    ListSellersComponent
+    ListSellersComponent,
+    SellerDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,10 @@ import { ListSellersComponent } from './list-sellers/list-sellers.component';
     }, {
       path: 'sellers',
       component: ListSellersComponent
+    },
+    {
+      path: 'seller/:id',
+      component: SellerDetailsComponent
     }])
   ],
   providers: [SellersService],

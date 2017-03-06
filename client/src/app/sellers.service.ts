@@ -33,7 +33,7 @@ export class SellersService {
   }
 
    getSellerById(id: number): Observable<Seller> {
-  	return this.http.get('http://localhost:5000/api/sellers/${id}')
+  	return this.http.get('http://localhost:5000/api/sellers/' + id)
   	.map(response =>{
   		return <Seller> response.json();
   	});
