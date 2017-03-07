@@ -11,6 +11,7 @@ import { SellerDlgComponent } from './seller-dlg/seller-dlg.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ListSellersComponent } from './list-sellers/list-sellers.component';
 import { SellerDetailsComponent } from './seller-details/seller-details.component';
+import { ProductDlgComponent } from './product-dlg/product-dlg.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SellerDetailsComponent } from './seller-details/seller-details.componen
     SellerDlgComponent,
     ProductCardComponent,
     ListSellersComponent,
-    SellerDetailsComponent
+    SellerDetailsComponent,
+    ProductDlgComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,6 @@ import { SellerDetailsComponent } from './seller-details/seller-details.componen
   ],
   providers: [SellersService],
   bootstrap: [AppComponent],
-  entryComponents: [SellerDlgComponent]
+  entryComponents: [SellerDlgComponent, ProductDlgComponent]
 })
 export class AppModule { }

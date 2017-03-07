@@ -32,4 +32,10 @@ export class SellerDetailsComponent implements OnInit {
     });
   }
 
+  onProductEdited(p: SellerProduct) {
+    // TODO: upfæra vöruna í gegnum service klasann
+    console.log("var var uppfærð");
+    console.log(p);
+  }
+
 }
