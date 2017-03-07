@@ -5,3 +5,11 @@
 
 	<img src="{{seller.imagePath}}" alt="Image of the seller"/>
 </div>
+
+<div *ngFor="let p of products">
+	<app-product-card 
+	[product]="p"
+	(productUpdated)="onProductEdited($event)">
+
+	</app-product-card>
+</div>

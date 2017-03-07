@@ -10,6 +10,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class SellerDetailsComponent implements OnInit {
 
   seller: Seller;
+  products: SellerProduct[];
+  top10products: SellerProduct[];
 
   constructor(private service: SellersService, private route: ActivatedRoute,
               private router: Router) { }
@@ -19,6 +21,12 @@ export class SellerDetailsComponent implements OnInit {
 
       this.service.getSellerById(p['id']).subscribe(result => {
         this.seller = result;
+
+        this.service.getSellerProducts(this.seller.id).subscribe(pro => {
+          this.products = pro;
+        });
+
+        // TODO get top 10 products
       })
 
     });
