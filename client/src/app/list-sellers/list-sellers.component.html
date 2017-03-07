@@ -1,15 +1,32 @@
-<p>
-  Söluaðilar
-</p>
+<div class="container-fluid">
+	<h2>
+		Söluaðilar
+	</h2>
+</div>
+<div class="container-fluid">
+	<button type="button" class="btn btn-primary" (click)="addSeller()">Bæta við seljanda</button>
+</div>
+<div class="container-fluid" id="tableContainer">
+	<table class="table table-hover">
+		<thead class="thead-inverse">
+			<tr>
+				<th>Nafn</th>
+				<th>Flokkur</th>
+			</tr>
+		</thead>
+		<tbody *ngFor="let s of sellers">
+			<tr href="" [routerLink]="['/seller', s.id]">
+				<td>{{s.name}}</td>
+				<td>{{s.category}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
-<h3>Nafn ---- Flokkur</h3>
+<template ngbModalContainer></template>
 
-<ul>
+<!--<ul>
 	<li *ngFor="let s of sellers">
     <a [routerLink]="['/seller', s.id]"> {{s.name}} --- {{s.category}} </a>
 	</li>
-</ul>
-
-<button class="btn-primary" (click)="addSeller()">Bæta við seljanda</button>
-
-<template ngbModalContainer></template>
+</ul>-->

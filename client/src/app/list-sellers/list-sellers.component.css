@@ -1,0 +1,12 @@
+tr {
+	cursor: pointer;
+}
+
+button {
+	float: right;
+	margin-bottom: 10px;
+}
+
+#tableContainer {
+	padding: 0 0;
+}
