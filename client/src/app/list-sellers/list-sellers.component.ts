@@ -38,4 +38,26 @@ export class ListSellersComponent implements OnInit {
     });
   }
 
+  editSeller(s: Seller) {
+    const modalInstance = this.modalService.open(SellerDlgComponent);
+
+    let copy = new Seller();
+    copy.id = s.id;
+    copy.name = s.name;
+    copy.imagePath = s.imagePath;
+    copy.category = s.category;
+
+
+    modalInstance.componentInstance.seller = copy;
+
+    modalInstance.result.then(obj => {
+      this.service.updateSeller(obj, obj.id).subscribe(result => {
+        // TODO: show toaster
+        s.name = copy.name;
+  	  });
+    }).catch(err => {
+      // Dialog was closed using cancel.
+    });
+  }
+
 }

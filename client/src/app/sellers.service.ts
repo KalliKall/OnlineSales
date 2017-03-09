@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/rx'
 
-export interface Seller {
+export class Seller {
 	id: number;
 	name: string;
 	category: string;
@@ -64,6 +64,13 @@ export class SellersService {
     return this.http.put('http://localhost:5000/api/sellers/' + id + '/products/' + updatedProduct.id, updatedProduct)
         .map(response => {
 			return <SellerProduct> response.json();
+		});
+  }
+
+  updateSeller(updatedSeller: Seller, id: number): Observable<Seller> {
+    return this.http.put('http://localhost:5000/api/sellers/' + id, updatedSeller)
+        .map(response => {
+			return <Seller> response.json();
 		});
   }
 }

@@ -6,7 +6,8 @@
 
 <ul>
 	<li *ngFor="let s of sellers">
-    <a [routerLink]="['/seller', s.id]"> {{s.name}} --- {{s.category}} </a>
+    <a [routerLink]="['/seller', s.id]"> {{s.name}} --- {{s.category}} --- </a>
+    <button class="btn-primary" (click)="editSeller(s)">Breyta seljanda</button>
 	</li>
 </ul>
 
