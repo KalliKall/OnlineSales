@@ -25,17 +25,16 @@ export class ProductCardComponent implements OnInit {
     // láta t.d. poppa upp modal glugga til að edita
     //this.product.name = "smuuu";
     //this.productUpdated.emit(this.product);
-    console.log("það held ég");
+    
 
     const modalInstance = this.modalService.open(ProductDlgComponent);
 
     modalInstance.componentInstance.product = this.product;
 
     modalInstance.result.then(obj => {
-      console.log("Dialog was closed using OK");
       this.productUpdated.emit(obj);
     }).catch(err => {
-      console.log("Dialog was closed using Cansel");
+      //console.log("Dialog was closed using Cansel");
     });
   }
 

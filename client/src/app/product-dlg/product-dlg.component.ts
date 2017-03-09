@@ -2,10 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class Product {
-  name: string;
   id: number;
-  category: string;
-  imagePath: string;
+	name: string;
+	price: number;
+	quantitySold: number;
+	quantityInStock: number;
+	imagePath: string;
 }
 
 @Component({
@@ -23,7 +25,7 @@ export class ProductDlgComponent implements OnInit {
   }
 
   onCancel() {
-    this.activeModal.close();
+    this.activeModal.dismiss();
   }
 
   onOk() {

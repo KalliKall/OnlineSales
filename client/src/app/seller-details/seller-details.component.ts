@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SellersService, Seller, SellerProduct } from '../sellers.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ProductDlgComponent } from '../product-dlg/product-dlg.component';
 
 @Component({
   selector: 'app-seller-details',
@@ -14,7 +16,7 @@ export class SellerDetailsComponent implements OnInit {
   top10products: SellerProduct[];
 
   constructor(private service: SellersService, private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router, private modalService: NgbModal) { }
 
   ngOnInit() {
     this.route.params.subscribe(p => {
@@ -33,9 +35,31 @@ export class SellerDetailsComponent implements OnInit {
   }
 
   onProductEdited(p: SellerProduct) {
-    // TODO: upfæra vöruna í gegnum service klasann
-    console.log("var var uppfærð");
-    console.log(p);
+
+    this.service.updateProduct(p, this.seller.id).subscribe(result => {
+      // TODO: show toaster
+      console.log(result);
+    });
   }
 
+  addProduct() {
+    const modalInstance = this.modalService.open(ProductDlgComponent);
+
+    modalInstance.componentInstance.product = {
+	    name: "",
+	    price: "",
+	    quantitySold: "",
+	    quantityInStock: "",
+	    imagePath: ""
+    };
+
+    modalInstance.result.then(obj => {
+      this.service.addProduct(obj, this.seller.id).subscribe(result => {
+        // TODO: show toaster
+        console.log(obj);
+  	  });
+    }).catch(err => {
+      // Dialog was closed using cancel.
+    });
+  }
 }

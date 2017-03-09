@@ -45,4 +45,25 @@ export class SellersService {
 			return <SellerProduct[]> response.json();
 		  });
   }
+
+  addSeller(newSeller: Seller): Observable<Seller> {
+    return this.http.post('http://localhost:5000/api/sellers', newSeller)
+        .map(response => {
+			return <Seller> response.json();
+		});
+  }
+
+  addProduct(newProduct: SellerProduct, id: number): Observable<SellerProduct> {
+    return this.http.post('http://localhost:5000/api/sellers/' + id + '/products', newProduct)
+        .map(response => {
+			return <SellerProduct> response.json();
+		});
+  }
+
+  updateProduct(updatedProduct: SellerProduct, id: number): Observable<SellerProduct> {
+    return this.http.put('http://localhost:5000/api/sellers/' + id + '/products/' + updatedProduct.id, updatedProduct)
+        .map(response => {
+			return <SellerProduct> response.json();
+		});
+  }
 }

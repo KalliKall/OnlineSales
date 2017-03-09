@@ -23,22 +23,18 @@ export class ListSellersComponent implements OnInit {
   addSeller() {
     const modalInstance = this.modalService.open(SellerDlgComponent);
 
-    // TODO: klára þetta
     modalInstance.componentInstance.seller = {
-      name: "Daniel",
-      category: "Hannyrðir",
-      imagePath: "http://example.com",
-      id: 7
+      name: "",
+      category: "",
+      imagePath: ""
     };
 
     modalInstance.result.then(obj => {
-      console.log("Dialog was closed using OK");
-      console.log(obj);
+      this.service.addSeller(obj).subscribe(result => {
+        // TODO: show toaster
+  	  });
     }).catch(err => {
-      // ath taka afrit af gögnum ef notandi ýtir á cansel svo þau eiðast ekki
-
-      console.log("Dialog was closed using Cansel");
-      console.log(err);
+      // Dialog was closed using cancel.
     });
   }
 

@@ -4,6 +4,8 @@
   <p>{{seller.category}}
 
 	<img src="{{seller.imagePath}}" alt="Image of the seller"/>
+
+	<button class="btn-primary" (click)="addProduct()">Bæta við vöru</button>
 </div>
 
 <div *ngFor="let p of products">
@@ -14,5 +16,3 @@
 
 	</app-product-card>
 </div>
-
-<template ngbModalContainer></template>
