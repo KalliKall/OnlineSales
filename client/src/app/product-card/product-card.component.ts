@@ -22,11 +22,6 @@ export class ProductCardComponent implements OnInit {
   }
 
   onEdit() {
-    // láta t.d. poppa upp modal glugga til að edita
-    //this.product.name = "smuuu";
-    //this.productUpdated.emit(this.product);
-    
-
     const modalInstance = this.modalService.open(ProductDlgComponent);
 
     modalInstance.componentInstance.product = this.product;
