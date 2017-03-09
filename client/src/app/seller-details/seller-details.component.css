@@ -1,0 +1,50 @@
+body {
+	text-align: left;
+}
+
+.img-responsive {
+	display: block;
+	margin: auto;
+	width: 200px;
+	height: 200px;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+}
+
+.btn-lg {
+	float: right;
+}
+
+h2 {
+	margin: auto;
+	font-size: 50px;
+}
+
+h3 {
+	margin: auto;
+}
+
+.text-justify-xs {
+    text-align: center;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-justify-sm {
+        text-align: center;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .text-justify-md {
+        text-align: center;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 1200px) {
+    .text-justify-lg {
+        text-align: left;
+    }
+}
