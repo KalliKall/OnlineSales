@@ -12,22 +12,17 @@
 			<tr>
 				<th>Nafn</th>
 				<th>Flokkur</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody *ngFor="let s of sellers">
-			<tr href="" [routerLink]="['/seller', s.id]">
-				<td>{{s.name}}</td>
-				<td>{{s.category}}</td>
+			<tr>
+				<td href="" [routerLink]="['/seller', s.id]">{{s.name}}</td>
+				<td href="" [routerLink]="['/seller', s.id]">{{s.category}}</td>
+				<td><button (click)="editSeller(s)">Breyta seljanda</button></td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
 <template ngbModalContainer></template>
-
-<!--<ul>
-	<li *ngFor="let s of sellers">
-    <a [routerLink]="['/seller', s.id]"> {{s.name}} --- {{s.category}} --- </a>
-    <button class="btn-primary" (click)="editSeller(s)">Breyta seljanda</button>
-	</li>
-</ul>-->
