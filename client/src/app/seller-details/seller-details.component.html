@@ -10,16 +10,35 @@
 		<div class="col-xl-1 col-lg-1 col-md-12">
 			<button type="button" class="btn btn-lg btn-primary" (click)="addProduct()">Bæta við</button>
 		</div>
-	</div>
-	<div *ngFor="let p of products">
-	<app-product-card 
-	[product]="p"
-	(productUpdated)="onProductEdited($event)">
 
-
-	</app-product-card>
-	</div>
-		<div class="row">
-				<!--Tabs koma hér-->
+		<div>
+			<ngb-tabset>
+			  <ngb-tab>
+			    <template ngbTabHeader>
+			      <!-- prepend something -->
+			      <template ngbTabTitle>All Products</template>
+			      <!-- append something -->  
+			    </template>
+			    <template ngbTabContent>All Products
+			    		<div *ngFor="let p of products">
+						<app-product-card 
+						[product]="p"
+						(productUpdated)="onProductEdited($event)">
+						
+						</app-product-card>
+						</div>
+			    </template>
+			  </ngb-tab>
+			  <ngb-tab>
+			    <template ngbTabHeader>
+			      <!-- prepend something -->
+			      <template ngbTabTitle>Top 10 Products</template>
+			      <!-- append something -->  
+			    </template>
+			    <template ngbTabContent>Top 10 Products
+			    		<!--ToDo-->
+			    </template>
+			  </ngb-tab>
+			</ngb-tabset>
 		</div>
 	</div>

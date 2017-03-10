@@ -10,3 +10,7 @@ button {
 #tableContainer {
 	padding: 0 0;
 }
+
+template {
+	float: left;
+}
