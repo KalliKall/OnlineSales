@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { SellersService, Seller, SellerProduct } from '../sellers.service';
 import { SellerDlgComponent } from '../seller-dlg/seller-dlg.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-list-sellers',
   templateUrl: './list-sellers.component.html',
-  styleUrls: ['./list-sellers.component.css']
+  styleUrls: ['./list-sellers.component.css'],
+  providers: [NgbTabset]
 })
 export class ListSellersComponent implements OnInit {
 

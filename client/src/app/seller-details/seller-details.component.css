@@ -42,6 +42,10 @@ h3 {
 	margin-left: 15px;
 }
 
+template {
+	float: left;
+}
+
 .btn-primary,
 .btn-primary:active,
 .btn-primary:visited,

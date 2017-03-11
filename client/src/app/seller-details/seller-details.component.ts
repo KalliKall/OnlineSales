@@ -28,6 +28,16 @@ export class SellerDetailsComponent implements OnInit {
           this.products = pro;
         });
 
+        this.service.getSellerProducts(this.seller.id).subscribe(top => {
+          this.top10products = top.sort(function(a, b){
+                                          if ( a.quantitySold < b.quantitySold )
+                                            return 1;
+                                          if ( a.quantitySold > b.quantitySold )
+                                            return -1;
+                                          return 0;
+                                        });
+        });
+
         // TODO get top 10 products
       })
 
