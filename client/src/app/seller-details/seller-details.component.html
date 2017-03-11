@@ -13,21 +13,53 @@
 	</div>
 </div>
 
-<div class="card-deck">
-	<div class="card-columns">
-		<div class="card" *ngFor="let p of products">
-			<app-product-card 
-				[product]="p"
-				(productUpdated)="onProductEdited($event)">
-			</app-product-card>
+<div class="background container-fluid">
+<ngb-tabset class="ngb-tabset">
+	<ngb-tab title="Allar vörur">
+		<template ngbTabHeader>
+			<template ngTabTitle>Allar vörur</template>
+		</template>
+		<template ngbTabContent>
+			<div class="card-deck">
+				<div class="card-columns">
+					<div class="card" *ngFor="let p of products">
+						<app-product-card 
+							[product]="p"
+							(productUpdated)="onProductEdited($event)">
+						</app-product-card>
+					</div>
+				</div>
+			</div>
+		</template>
+	</ngb-tab>
+	<ngb-tab title="Topp 10">
+		<template ngbTabHeader>
+			<template ngbTabTitle>10 mest seldar vörur</template>
+		</template>
+		<template ngbTabContent>
+			<div class="card-deck">
+				<div class="card-columns">
+					<div class="card" *ngFor="let p of top10products | slice:0:9">
+						<app-product-card 
+							[product]="p"
+							(productUpdated)="onProductEdited($event)">
+						</app-product-card>
+					</div>
+				</div>
+			</div>
+		</template>
+	</ngb-tab>
+</ngb-tabset>
+</div>
 
+<!--
 		<div>
 			<ngb-tabset>
 			  <ngb-tab>
 			    <template ngbTabHeader>
 			      <!-- prepend something -->
-			      <template ngbTabTitle>All Products</template>
-			      <!-- append something -->  
+			      <!--<template ngbTabTitle>All Products</template>
+			      append something 
 			    </template>
 			    <template ngbTabContent>All Products
 			    		<div *ngFor="let p of products">
@@ -41,9 +73,9 @@
 			  </ngb-tab>
 			  <ngb-tab>
 			    <template ngbTabHeader>
-			      <!-- prepend something -->
+			      <!-- prepend something
 			      <template ngbTabTitle>Top 10 Products</template>
-			      <!-- append something -->  
+			      <!-- append something 
 			    </template>
 			    <template ngbTabContent>Top 10 Products
 			    		<div *ngFor="let p of top10products | slice:0:9">
@@ -56,6 +88,4 @@
 			    </template>
 			  </ngb-tab>
 			</ngb-tabset>
-		</div>
-	</div>
-</div>
+		</div>-->

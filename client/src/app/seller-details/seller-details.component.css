@@ -24,6 +24,20 @@ h3 {
 	margin: auto;
 }
 
+.all-products {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+.top-products {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+
+.background {
+	background-color: #EED7C5;
+}
+
 .text-justify-xs {
     text-align: center;
 }
@@ -33,7 +47,11 @@ h3 {
 	padding: 50px 0px;
 }
 
-.card-deck {
+.inner-background {
+	background-color: white;
+}
+
+.ngb-tabset {
 	background-color: #EED7C5;
 }
 
@@ -43,7 +61,7 @@ h3 {
 }
 
 template {
-	float: left;
+	padding: 20px;
 }
 
 .btn-primary,

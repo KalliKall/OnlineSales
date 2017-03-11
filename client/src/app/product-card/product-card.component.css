@@ -1,5 +1,5 @@
 img {
-	padding-top: 10px;
+	margin-top: 10px;
 	width: 200px;
 	height: 200px;
 	display: block;
@@ -26,7 +26,10 @@ img {
 
 .change-product-button {
 	float: right;
-	margin-bottom: 10px;
+}
+
+.card-footer {
+	padding-bottom: 20px;
 }
 
 .btn-primary,
