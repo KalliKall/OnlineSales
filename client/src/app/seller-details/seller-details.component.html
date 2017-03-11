@@ -36,7 +36,13 @@
 			      <!-- append something -->  
 			    </template>
 			    <template ngbTabContent>Top 10 Products
-			    		<!--ToDo-->
+			    		<div *ngFor="let p of top10products | slice:0:9">
+						<app-product-card 
+						[product]="p"
+						(productUpdated)="onProductEdited($event)">
+						
+						</app-product-card>
+						</div>
 			    </template>
 			  </ngb-tab>
 			</ngb-tabset>
