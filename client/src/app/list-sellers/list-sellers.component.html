@@ -1,10 +1,6 @@
-<div class="container-fluid">
-	<h2>
-		Söluaðilar
-	</h2>
-</div>
-<div class="container-fluid">
-	<button type="button" class="btn btn-primary" (click)="addSeller()">Bæta við seljanda</button>
+<div class="container-fluid mini-header">
+	<h2 class="seller">Söluaðilar</h2>
+	<button type="button" class="btn btn-primary add-seller" (click)="addSeller()">Bæta við seljanda</button>
 </div>
 <div class="container-fluid" id="tableContainer">
 	<table class="table table-hover">
@@ -19,7 +15,7 @@
 			<tr>
 				<td href="" [routerLink]="['/seller', s.id]">{{s.name}}</td>
 				<td href="" [routerLink]="['/seller', s.id]">{{s.category}}</td>
-				<td><button (click)="editSeller(s)">Breyta seljanda</button></td>
+				<td><button class="btn btn-secondary" (click)="editSeller(s)">Breyta seljanda</button></td>
 			</tr>
 		</tbody>
 	</table>

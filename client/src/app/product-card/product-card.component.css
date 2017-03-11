@@ -1,0 +1,43 @@
+img {
+	padding-top: 10px;
+	width: 200px;
+	height: 200px;
+	display: block;
+	margin: auto;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+}
+
+.product-name {
+	float: left;
+}
+
+.product-price {
+	float: right;
+}
+
+.product-name-price-holder {
+	margin-bottom: 60px;
+}
+
+.text-muted {
+	text-align: left;
+}
+
+.change-product-button {
+	float: right;
+	margin-bottom: 10px;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #939F5C;
+    border-color: #939F5C;
+}
+
+.btn-primary:hover {
+	background-color: #001514;
+    border-color: #001514;
+}

@@ -28,6 +28,33 @@ h3 {
     text-align: center;
 }
 
+.seller-info {
+	background-color: #A47963;
+	padding: 50px 0px;
+}
+
+.card-deck {
+	background-color: #EED7C5;
+}
+
+.card {
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #292b2c;
+    border-color: #292b2c;
+}
+
+.btn-primary:hover {
+	background-color: #001514;
+    border-color: #001514;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .text-justify-sm {

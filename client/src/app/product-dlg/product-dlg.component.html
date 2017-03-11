@@ -1,32 +1,27 @@
 <div class="modal-header">
-  <h4 class="modal-title">Breyta vöru</h4>
+  <h4 class="modal-title">Vara</h4>
   <button type="button" class="close" aria-label="Close" (click)="onCancel()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-<div>
-  <label>Nafn:</label>
-  <input [(ngModel)]="product.name" autofocus />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nafn" [(ngModel)]="product.name" autofocus />
   </div>
-  <div>
-    <label>Verð:</label>
-  <input [(ngModel)]="product.price" />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Verð" [(ngModel)]="product.price" />
   </div>
-  <div>
-    <label>Seld eintök:</label>
-  <input [(ngModel)]="product.quantitySold" />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Seld eintök" [(ngModel)]="product.quantitySold" />
   </div>
-  <div>
-    <label>Lagerstaða:</label>
-  <input [(ngModel)]="product.quantityInStock" />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Lagerstaða" [(ngModel)]="product.quantityInStock" />
   </div>
-  <div>
-    <label>Mynd:</label>
-  <input [(ngModel)]="product.imagePath" />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Mynd" [(ngModel)]="product.imagePath" />
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="onCancel()">Hætti við</button>
+  <button type="button" class="btn btn-secondary" (click)="onCancel()">Hætta við</button>
   <button type="button" class="btn btn-success" (click)="onOk()">Áfram</button>
 </div>

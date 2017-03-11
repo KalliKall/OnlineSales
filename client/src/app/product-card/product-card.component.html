@@ -1,12 +1,19 @@
-<div class="card-container" *ngIf="product">
-
-<h3>{{product.name}}</h3>
-<img [src]="product.imagePath" style="width: 80px" />
-<i>Verð: {{product.price}}</i>
-<i>Seld eintök: {{product.quantitySold}}</i>
-<i>Lagerstaða: {{product.quantityInStock}}</i>
-
-<button class="btn btn-primary" (click)="onEdit()">Breyta vöru</button>
-
+<div>
+  <img class="card-img-top" [src]="product.imagePath" alt="Card image cap" />
+  <div class="card-block">
+    <div class="product-name-price-holder">
+      <h4 class="card-title product-name">{{product.name}}</h4>
+      <h4 class="card-text product-price">Verð: {{product.price}}</h4>
+    </div>
+  </div>
   <template ngbModalContainer></template>
+</div>
+<div class="card-footer">
+  <span class="info-div">
+    <small class="text-muted">Seld: {{product.quantitySold}}</small>
+    <small class="text-muted">Lagerstaða: {{product.quantityInStock}}</small>
+  </span>
+  <span class="btn-div">
+    <button class="btn btn-primary change-product-button" (click)="onEdit()">Breyta vöru</button>
+  </span>
 </div>

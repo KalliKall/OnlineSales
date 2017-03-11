@@ -5,17 +5,14 @@
   </button>
 </div>
 <div class="modal-body">
-  <div>
-  <label>Nafn:</label>
-  <input [(ngModel)]="seller.name" autofocus />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Nafn" [(ngModel)]="seller.name" autofocus />
   </div>
-  <div>
-  <label>Flokkur:</label>
-  <input [(ngModel)]="seller.category" autofocus />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Flokkur" [(ngModel)]="seller.category" autofocus />
   </div>
-  <div>
-  <label>Mynd:</label>
-  <input [(ngModel)]="seller.imagePath" autofocus />
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Slóð að mynd" [(ngModel)]="seller.imagePath" autofocus />
   </div>
 </div>
 <div class="modal-footer">
