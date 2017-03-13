@@ -10,54 +10,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'OnlineSales';
+  title = 'Netverslun';
 
-  //private seller: Seller[];
-  private seller: Seller;
-
-  products: SellerProduct[];
-
-  constructor(private service: SellersService, private modalService: NgbModal) { }
+  constructor() { }
   
   ngOnInit() {
-  		/*this.service.getSellers().subscribe(result => {
-  			this.sellers = result;
-  		});
-
-  		this.service.getSellerById(1337).subscribe((result) => {
-  			this.seller = result;
-  		}, (err) => {
-  			console.log("you fuckd up");
-  		})
-
-      this.service.getSellerProducts(1).subscribe(result => {
-        this.products = result;
-      });*/
-
-  }
-
-  onProductEdited(p: SellerProduct) {
-    // TODO: upfæra vöruna í gegnum service klasann
-    console.log(p);
-  }
-
-  addSeller() {
-    const modalInstance = this.modalService.open(SellerDlgComponent);
-    modalInstance.componentInstance.seller = {
-      name: "Daniel",
-      category: "Hannyrðir",
-      imagePath: "http://example.com",
-      id: 7
-    };
-
-    modalInstance.result.then(obj => {
-      console.log("Dialog was closed using OK");
-      console.log(obj);
-    }).catch(err => {
-      // ath taka afrit af gögnum ef notandi ýtir á cansel svo þau eiðast ekki
-
-      console.log("Dialog was closed using Cansel");
-      console.log(err);
-    });
   }
 }

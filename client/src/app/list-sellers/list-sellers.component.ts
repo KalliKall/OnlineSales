@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { SellersService, Seller, SellerProduct } from '../sellers.service';
 import { SellerDlgComponent } from '../seller-dlg/seller-dlg.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbTabset } from '@ng-bootstrap/ng-bootstrap';
+
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
   selector: 'app-list-sellers',
@@ -14,7 +16,12 @@ export class ListSellersComponent implements OnInit {
 
   sellers: Seller[];
 
-  constructor(private service: SellersService, private modalService: NgbModal) { }
+  constructor(private service: SellersService, 
+              private modalService: NgbModal,
+              public toastr: ToastsManager, 
+              vcr: ViewContainerRef) { 
+                this.toastr.setRootViewContainerRef(vcr);
+              }
 
   ngOnInit() {
     this.service.getSellers().subscribe(result => {
@@ -32,9 +39,21 @@ export class ListSellersComponent implements OnInit {
     };
 
     modalInstance.result.then(obj => {
-      this.service.addSeller(obj).subscribe(result => {
-        // TODO: show toaster
-  	  });
+      if(obj.name !== "") {
+        this.service.addSeller(obj).subscribe(result => {
+          // updating the seller list
+          this.sellers.push(obj);
+
+          // showing toaster
+          this.toastr.success(obj.name + ' var bætt við seljendur!', 'Nýr seljandi!');
+  	    }, (err) => {
+          this.toastr.error('Gat ekki bætt við seljanda!', 'Villa!');
+        });
+      }
+      else {
+        this.toastr.error('Seljandi þarf að hafa nafn!', 'Villa!');
+      }
+      
     }).catch(err => {
       // Dialog was closed using cancel.
     });
@@ -49,14 +68,24 @@ export class ListSellersComponent implements OnInit {
     copy.imagePath = s.imagePath;
     copy.category = s.category;
 
-
     modalInstance.componentInstance.seller = copy;
 
     modalInstance.result.then(obj => {
-      this.service.updateSeller(obj, obj.id).subscribe(result => {
-        // TODO: show toaster
-        s.name = copy.name;
-  	  });
+      if(obj.name !== "") {
+        this.service.updateSeller(obj, obj.id).subscribe(result => {
+          s.name = copy.name;
+          s.imagePath = copy.imagePath;
+          s.category = copy.category;
+
+          // showing toaster
+          this.toastr.success(obj.name + ' var uppfærður', 'Uppfærður seljandi!');
+  	    }, (err) => {
+          this.toastr.error('Gat ekki uppfært seljanda!','Villa!');
+        });
+      }
+      else {
+        this.toastr.error('Seljandi þarf að hafa nafn!', 'Villa!');
+      }
     }).catch(err => {
       // Dialog was closed using cancel.
     });
