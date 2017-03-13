@@ -77,6 +77,12 @@ template {
     border-color: #001514;
 }
 
+ngb-alert {
+	text-align: center;
+	font-size: 40px;
+	color: #292b2c;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     .text-justify-sm {

@@ -20,7 +20,8 @@
 			<template ngTabTitle>Allar vörur</template>
 		</template>
 		<template ngbTabContent>
-			<ngb-alert *ngIf="noProducts" [type]="info">Þessi seljandi er ekki með neinar vörur!</ngb-alert>
+			<ngb-alert *ngIf="noProducts" [type]="info" [dismissible]="false">Engar vörur skráðar!</ngb-alert>
+			<div class="glyphicon glyphicon-exclamation-sign" *ngIf="noProducts"></div>
 			<div class="card-deck">
 				<div class="card-columns">
 					<div class="card" *ngFor="let p of products">
@@ -38,7 +39,7 @@
 			<template ngbTabTitle>10 mest seldar vörur</template>
 		</template>
 		<template ngbTabContent>
-			<ngb-alert *ngIf="noProducts" [type]="info">Þessi seljandi er ekki með neinar vörur!</ngb-alert>
+			<ngb-alert *ngIf="noProducts" [type]="info" [dismissible]="false">Engar vörur skráðar!</ngb-alert>
 			<div class="card-deck">
 				<div class="card-columns">
 					<div class="card" *ngFor="let p of top10products">
