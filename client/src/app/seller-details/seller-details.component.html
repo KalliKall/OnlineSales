@@ -41,7 +41,7 @@
 			<ngb-alert *ngIf="noProducts" [type]="info">Þessi seljandi er ekki með neinar vörur!</ngb-alert>
 			<div class="card-deck">
 				<div class="card-columns">
-					<div class="card" *ngFor="let p of top10products | slice:0:9">
+					<div class="card" *ngFor="let p of top10products">
 						<app-product-card 
 							[product]="p"
 							(productUpdated)="onProductEdited($event)">

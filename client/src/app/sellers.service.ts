@@ -46,6 +46,19 @@ export class SellersService {
 		  });
   }
 
+  getTop10Products(id: number): Observable<SellerProduct[]> {
+  	return this.http.get('http://localhost:5000/api/sellers/' + id + '/products')
+  	.map(response =>{
+  		return <SellerProduct[]> response.json().sort(function(a, b){
+                                          if ( a.quantitySold < b.quantitySold )
+                                            return 1;
+                                          if ( a.quantitySold > b.quantitySold )
+                                            return -1;
+                                          return 0;
+                                        }).slice(0,10);
+  	});
+  }
+
   addSeller(newSeller: Seller): Observable<Seller> {
     return this.http.post('http://localhost:5000/api/sellers', newSeller)
         .map(response => {
