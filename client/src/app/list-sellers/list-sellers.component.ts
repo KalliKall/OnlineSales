@@ -3,7 +3,6 @@ import { SellersService, Seller, SellerProduct } from '../sellers.service';
 import { SellerDlgComponent } from '../seller-dlg/seller-dlg.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbTabset } from '@ng-bootstrap/ng-bootstrap';
-
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 @Component({
