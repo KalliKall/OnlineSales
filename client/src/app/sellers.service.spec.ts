@@ -9,7 +9,7 @@ describe('SellersService', () => {
       providers: [SellersService]
     });
   });
-
+/*
   it('should ...', inject([SellersService], (service: SellersService) => {
     expect(service).toBeTruthy();
   }));
@@ -22,5 +22,5 @@ describe('SellersService', () => {
   it('should try to issue a HTTP POST request when trying to add a new seller', () => {
     // expect(mockHTTP.get).toHaveBeenCalled();
   });
-
+*/
 });

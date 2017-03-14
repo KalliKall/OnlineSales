@@ -13,8 +13,8 @@
 		</thead>
 		<tbody *ngFor="let s of sellers">
 			<tr>
-				<td href="" [routerLink]="['/seller', s.id]">{{s.name}}</td>
-				<td href="" [routerLink]="['/seller', s.id]">{{s.category}}</td>
+				<td href="" (click)="goToDetailsSide(s.id)">{{s.name}}</td>
+				<td href="" (click)="goToDetailsSide(s.id)">{{s.category}}</td>
 				<td><button class="btn btn-secondary" (click)="editSeller(s)">Breyta seljanda</button></td>
 			</tr>
 		</tbody>

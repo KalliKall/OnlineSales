@@ -4,6 +4,7 @@ import { SellerDlgComponent } from '../seller-dlg/seller-dlg.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbTabset } from '@ng-bootstrap/ng-bootstrap';
 import { ToastsManager } from 'ng2-toastr/ng2-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-sellers',
@@ -17,6 +18,7 @@ export class ListSellersComponent implements OnInit {
 
   constructor(private service: SellersService, 
               private modalService: NgbModal,
+              private router: Router,
               public toastr: ToastsManager, 
               vcr: ViewContainerRef) { 
                 this.toastr.setRootViewContainerRef(vcr);
@@ -26,6 +28,10 @@ export class ListSellersComponent implements OnInit {
     this.service.getSellers().subscribe(result => {
   			this.sellers = result;
   	});
+  }
+
+  goToDetailsSide(sellerId : number) {
+    this.router.navigate(['/seller', sellerId]);
   }
 
   addSeller() {
