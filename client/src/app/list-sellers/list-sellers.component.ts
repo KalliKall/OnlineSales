@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class ListSellersComponent implements OnInit {
 
   sellers: Seller[];
+  sellersListEmpty: boolean;
 
   constructor(private service: SellersService, 
               private modalService: NgbModal,
@@ -25,9 +26,16 @@ export class ListSellersComponent implements OnInit {
               }
 
   ngOnInit() {
-    this.service.getSellers().subscribe(result => {
-  			this.sellers = result;
+    this.service.getSellers().subscribe(result => {  
+  	  this.sellers = result;
   	});
+
+    if(this.sellers === []) {
+      this.sellersListEmpty = true;
+    }
+    else {
+      this.sellersListEmpty = false;
+    }
   }
 
   goToDetailsSide(sellerId : number) {
